@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-
+import SecondPage from './SecondPage'
 const Container = styled.div``;
 
 const LandingImage = styled.div`
@@ -20,18 +20,31 @@ border-radius: 10px;
 `
 
 class Welcome extends Component {
+    state = {
+        fullPage: true
+    }
+
+    toggleNextPage = () => {
+        this.setState({fullPage: !this.state.fullPage})
+    }
   render() {
     return (
-      <Container>
-        <LandingImage>
-          <LandingText>
-            <h1>Hello World.</h1>
-            <button onClick={this.props.togglePages}>
-              Click me for magic!
-            </button>
-          </LandingText>
-        </LandingImage>
-      </Container>
+        <div>
+            {this.state.fullPage? (
+                <Container>
+                <LandingImage>
+                  <LandingText>
+                    <h1>Hello World.</h1>
+                    {/* <button onClick={this.props.togglePages}> */}
+                      {/* Click me for magic!
+                    </button> */}
+                    <button onClick={this.toggleNextPage}>Click me for magic!</button>
+                  </LandingText>
+                </LandingImage>
+              </Container>
+            ) : <SecondPage/>}
+      
+      </div>
     );
   }
 }

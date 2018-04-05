@@ -18,7 +18,7 @@ const PrettyGirlText = styled.div`
   border-radius: 10px;
 `;
 
-class New extends Component {
+class SecondPage extends Component {
   state = {
     fullPage: true
   };
@@ -48,4 +48,4 @@ class New extends Component {
   }
 }
 
-export default New;
+export default SecondPage;
